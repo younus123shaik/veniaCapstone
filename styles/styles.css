@@ -258,6 +258,9 @@ main .section.highlight {
 }
 
 /* Default styles for desktop */
+* {
+  scrollbar-width: none !important;;
+}
 body {
   font-size: 20px; /* Default body text */
 }
