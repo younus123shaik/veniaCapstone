@@ -138,7 +138,7 @@ pre {
   padding: 16px;
   border-radius: 8px;
   background-color: var(--light-color);
-  overflow-x: auto;
+  /* overflow-x: auto; */
   white-space: pre;
 }
 
@@ -185,9 +185,9 @@ button {
   color: var(--dark-color);
   text-decoration: underline;
   cursor: pointer;
-  /* overflow: hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap; */
+  white-space: nowrap; 
 }
 
 a.button:hover,
@@ -235,7 +235,8 @@ main > .section {
 
 main > .section > div {
   max-width: 1200px;
-  margin: auto;
+  /* margin: auto; */
+  padding: 0;
 }
 
 main > .section:first-of-type {
@@ -244,7 +245,7 @@ main > .section:first-of-type {
 
 @media (width >= 900px) {
   main > .section > div {
-    padding: 0 32px;
+    padding: 0;
   }
 }
 
@@ -253,7 +254,7 @@ main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
-  padding: 40px 0;
+  /* padding: 40px 0; */
 }
 
 /* Default styles for desktop */
