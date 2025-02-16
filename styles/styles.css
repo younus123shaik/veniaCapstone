@@ -168,25 +168,26 @@ a:hover {
 /* buttons */
 a.button:any-link,
 button {
-  box-sizing: border-box;
+  /* box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
   margin: 12px 0;
   border: 2px solid transparent;
   border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font-family: var(--body-font-family);
+  padding: 0.5em 1.2em; */
+  /* font-family: var(--body-font-family);
   font-style: normal;
   font-weight: 500;
   line-height: 1.25;
   text-align: center;
-  text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  text-decoration: none; */
+  /* background-color: var(--link-color); */
+  color: var(--dark-color);
+  text-decoration: underline;
   cursor: pointer;
-  overflow: hidden;
+  /* overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: nowrap; */
 }
 
 a.button:hover,
@@ -235,7 +236,6 @@ main > .section {
 main > .section > div {
   max-width: 1200px;
   margin: auto;
-  padding: 0 24px;
 }
 
 main > .section:first-of-type {
@@ -254,4 +254,71 @@ main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
+}
+
+/* Default styles for desktop */
+body {
+  font-size: 20px; /* Default body text */
+}
+
+h1 {
+  font-size: 40px; /* Page title */
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+.secondary-text {
+  font-size: 18px; /* Secondary text */
+}
+
+/* Tablet View */
+@media (max-width: 900px) {
+  body {
+      font-size: 18px;
+  }
+
+  h1 {
+      font-size: 36px;
+  }
+
+  h2 {
+      font-size: 30px;
+  }
+
+  h3 {
+      font-size: 26px;
+  }
+
+  .secondary-text {
+      font-size: 16px;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+  body {
+      font-size: 16px;
+  }
+
+  h1 {
+      font-size: 32px;
+  }
+
+  h2 {
+      font-size: 28px;
+  }
+
+  h3 {
+      font-size: 24px;
+  }
+
+  .secondary-text {
+      font-size: 14px;
+  }
 }

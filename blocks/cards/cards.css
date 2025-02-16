@@ -6,10 +6,29 @@
   grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
   grid-gap: 24px;
 }
+.cards {
+  ul {
+    margin: 1rem;
 
+    li {
+      position: relative;
+
+      .cards-card-image {
+        opacity: .8;
+      }
+
+      .cards-card-body {
+        position: absolute;
+        top: 0;
+        left: 20%;
+        color: var(--background-color);
+      }
+    }
+  }
+}
 .cards > ul > li {
   border: 1px solid #dadada;
-  background-color: var(--background-color);
+  
 }
 
 .cards .cards-card-body {
