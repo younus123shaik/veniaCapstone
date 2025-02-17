@@ -80,15 +80,13 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
       ? !forceExpanded
       : nav.getAttribute("aria-expanded") === "true";
   const button = nav.querySelector(".nav-hamburger button");
+
   document.body.style.overflowY = expanded || isDesktop.matches ? "" : "hidden";
   nav.setAttribute("aria-expanded", expanded ? "false" : "true");
 
   console.log(isDesktop)
   // Apply sliding effect using JavaScript (Instead of CSS classes)
-  if (isDesktop.matches) {
-    nav.removeAttribute("style");
-  }
-  else if (expanded && !isDesktop.matches) {
+  if (expanded && !isDesktop.matches) {
     nav.style.left = '0';
     nav.style.position = 'relative';
     nav.style.transform = "translateX(0)";
@@ -97,7 +95,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   } else {
     nav.style.position = 'absolute';
     nav.style.width = '95%';
-    nav.style.left = "-50%";
+    nav.style.left = "-50%"; // Move it -10rem left
     nav.style.transform = "translateX(50%)";
     nav.style.backgroundColor = "white";
     nav.style.transition = "transform .6s ease-in-out"; 
@@ -109,7 +107,8 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
     "aria-label",
     expanded ? "Open navigation" : "Close navigation"
   );
-  // enable nav dropdown keyboard accessibility
+
+  // Enable nav dropdown keyboard accessibility
   const navDrops = navSections.querySelectorAll(".nav-drop");
   if (isDesktop.matches) {
     navDrops.forEach((drop) => {
@@ -125,17 +124,16 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
     });
   }
 
-  // enable menu collapse on escape keypress
+  // Enable menu collapse on escape keypress
   if (!expanded || isDesktop.matches) {
-    // collapse menu on escape press
     window.addEventListener("keydown", closeOnEscape);
-    // collapse menu on focus lost
     nav.addEventListener("focusout", closeOnFocusLost);
   } else {
     window.removeEventListener("keydown", closeOnEscape);
     nav.removeEventListener("focusout", closeOnFocusLost);
   }
 }
+
 
 /**
  * loads and decorates the header, mainly the nav
@@ -163,9 +161,7 @@ export default async function decorate(block) {
     navBrand.firstElementChild.innerHTML =
       '<img loading="lazy" title="Venia" alt="Venia" class="header-logo-kL0 image-loaded-g2z absolute left-0 top-0 visible" height="18" src="https://venia.magento.com/VeniaLogo-n77.svg" width="102" style="--height: 18px; --width: 102px;">';
   }
-  nav.querySelector(
-    "div .icon-search"
-  ).innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-icon-Dp3"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`;
+  
   
   const brandLink = navBrand.querySelector(".button");
   if (brandLink) {
@@ -180,7 +176,7 @@ export default async function decorate(block) {
       .forEach((navSection) => {
         if (navSection.querySelector("ul"))
           navSection.classList.add("nav-drop");
-        navSection.addEventListener("click", () => {
+        navSection.addEventListener("mouseenter", () => {
           if (isDesktop.matches) {
             const expanded =
               navSection.getAttribute("aria-expanded") === "true";
@@ -202,16 +198,6 @@ export default async function decorate(block) {
     </button>`;
   hamburger.addEventListener("click", () => toggleMenu(nav, navSections));
   nav.prepend(hamburger);
-  // bag for cart
-  const bag = document.createElement("div");
-  bag.classList.add("nav-bag");
-  bag.innerHTML = `<div aria-label="Open cart">
-      <span class="nav-bag-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-icon-Dp3"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg></span>
-    </div>`;
-  bag.addEventListener("click", () => {
-    // open cart modal
-  });
-  nav.append(bag);
   nav.setAttribute("aria-expanded", "false");
   // prevent mobile nav behavior on window resize
   toggleMenu(nav, navSections, isDesktop.matches);
