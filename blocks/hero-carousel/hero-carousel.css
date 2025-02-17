@@ -3,11 +3,10 @@
     gap: 2rem;
     overflow: scroll; */
     .hero-slider {
-        /* min-width: 100vw; */
+        min-height: 660px;
         text-align: center;
         position: relative;
         /* padding-left: 1rem; */
-        min-height: 90vh;
         display: flex;
         justify-content: center;
         align-items: center;

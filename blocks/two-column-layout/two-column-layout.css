@@ -1,0 +1,75 @@
+.two-column-layout {
+    & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.8rem;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        line-height: 1.25;
+        & h2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        & h3 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    }
+}
+
+.textbackgroundred {
+    & > div {
+        gap: 0px;
+        & div:last-child {
+            color: var(--background-color);
+            background-color: rgb(27, 37, 44);
+            border-width: 1px;
+            border-style: none;
+            border-image: initial;
+            border-radius: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin: 0px;
+            min-height: 400px;
+            padding: 20px 80px;
+            width: 33.3333%;
+            /* align-self: stretch; */
+            
+            & a {
+                color: var(--background-color);
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .two-column-layout {
+        & > div {
+        }
+    }
+}
+
+@media (min-width: 900px) {
+    .two-column-layout {
+        & > div {
+            flex-direction: row;
+            & h2 {
+                font-size: 3.75rem;
+            }
+            
+            & h3 {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .textbackgroundred {
+        & > div {
+            & div:last-child {
+                padding: 80px;
+            }
+        }
+    }
+}

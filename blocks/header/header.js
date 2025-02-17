@@ -84,9 +84,10 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   document.body.style.overflowY = expanded || isDesktop.matches ? "" : "hidden";
   nav.setAttribute("aria-expanded", expanded ? "false" : "true");
 
-  console.log(isDesktop)
-  // Apply sliding effect using JavaScript (Instead of CSS classes)
-  if (expanded && !isDesktop.matches) {
+  if (isDesktop.matches) {
+    nav.removeAttribute("style");
+  }
+  else if (expanded && !isDesktop.matches) {
     nav.style.left = '0';
     nav.style.position = 'relative';
     nav.style.transform = "translateX(0)";
@@ -95,13 +96,11 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   } else {
     nav.style.position = 'absolute';
     nav.style.width = '95%';
-    nav.style.left = "-50%"; // Move it -10rem left
+    nav.style.left = "-50%";
     nav.style.transform = "translateX(50%)";
     nav.style.backgroundColor = "white";
     nav.style.transition = "transform .6s ease-in-out"; 
   }
-  
-  // Add transition effect
 
   button.setAttribute(
     "aria-label",
