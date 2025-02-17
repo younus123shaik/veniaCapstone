@@ -82,10 +82,29 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   const button = nav.querySelector(".nav-hamburger button");
   document.body.style.overflowY = expanded || isDesktop.matches ? "" : "hidden";
   nav.setAttribute("aria-expanded", expanded ? "false" : "true");
-  toggleAllNavSections(
-    navSections,
-    expanded || isDesktop.matches ? "false" : "true"
-  );
+
+  console.log(isDesktop)
+  // Apply sliding effect using JavaScript (Instead of CSS classes)
+  if (isDesktop.matches) {
+    nav.removeAttribute("style");
+  }
+  else if (expanded && !isDesktop.matches) {
+    nav.style.left = '0';
+    nav.style.position = 'relative';
+    nav.style.transform = "translateX(0)";
+    nav.style.transition = "none";
+    nav.style.width = '100%';
+  } else {
+    nav.style.position = 'absolute';
+    nav.style.width = '95%';
+    nav.style.left = "-50%";
+    nav.style.transform = "translateX(50%)";
+    nav.style.backgroundColor = "white";
+    nav.style.transition = "transform .6s ease-in-out"; 
+  }
+  
+  // Add transition effect
+
   button.setAttribute(
     "aria-label",
     expanded ? "Open navigation" : "Close navigation"
