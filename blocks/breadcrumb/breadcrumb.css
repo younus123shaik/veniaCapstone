@@ -1,0 +1,15 @@
+.breadcrumb {
+    & div > p {
+        font-size: 0.875rem;
+        margin: 1rem;
+        line-height: 1.5;
+        & > a {
+            text-decoration: underline;
+            color: var(--dark-color);
+        }
+        & span {
+            margin-left: 0.4rem;
+            font-weight: 400;
+        }
+    }
+}

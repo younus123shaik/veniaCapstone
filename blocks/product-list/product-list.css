@@ -18,7 +18,11 @@
             justify-content: space-around;
             min-height: 10.4rem;
             p {
-                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                line-clamp: 1;
+                -webkit-line-clamp: 1;
+                overflow: hidden;
             }
             div {
                 display: flex;

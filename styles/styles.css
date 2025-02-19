@@ -259,7 +259,10 @@ main .section.highlight {
 
 /* Default styles for desktop */
 * {
-  scrollbar-width: none !important;;
+  scrollbar-width: none !important;
+  font-family: "muli", sans-serif !important;
+  font-style: normal;
+  font-weight: 200;
 }
 body {
   font-size: 20px; /* Default body text */
