@@ -178,7 +178,7 @@ export default async function decorate(block) {
       .forEach((navSection) => {
         if (navSection.querySelector("ul"))
           navSection.classList.add("nav-drop");
-        navSection.addEventListener("mouseenter", () => {
+        navSection.addEventListener("mouseleave", () => {
           if (isDesktop.matches) {
             const expanded =
               navSection.getAttribute("aria-expanded") === "true";

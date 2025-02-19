@@ -232,7 +232,9 @@ header nav .nav-sections ul > li > ul > li {
 
     header nav .nav-sections .default-content-wrapper > ul > li {
         flex: 0 1 auto;
-        /* position: relative; */
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     header nav .nav-sections .default-content-wrapper > ul > li > ul {
@@ -261,6 +263,9 @@ header nav .nav-sections ul > li > ul > li {
 
     header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
         padding: 8px 0;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
