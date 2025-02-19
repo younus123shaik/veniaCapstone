@@ -178,11 +178,12 @@ header nav .nav-sections ul {
 }
 
 header nav .nav-sections ul > li {
-    font-weight: 500;
+    font-weight: 700;
 }
 
 header nav .nav-sections ul > li > ul {
     margin-top: 0;
+    margin-left: 1rem;
 }
 
 header nav .nav-sections ul > li > ul > li {
@@ -201,7 +202,7 @@ header nav .nav-sections ul > li > ul > li {
     }
 
     header nav .nav-sections .nav-drop {
-        position: relative;
+        /* position: relative; */
         padding-right: 16px;
         cursor: pointer;
     }
@@ -209,9 +210,6 @@ header nav .nav-sections ul > li > ul > li {
     header nav .nav-sections .nav-drop::after {
         content: "";
         display: inline-block;
-        position: absolute;
-        top: 0.5em;
-        right: 2px;
         transform: rotate(135deg);
         width: 6px;
         height: 6px;
@@ -234,7 +232,7 @@ header nav .nav-sections ul > li > ul > li {
 
     header nav .nav-sections .default-content-wrapper > ul > li {
         flex: 0 1 auto;
-        position: relative;
+        /* position: relative; */
     }
 
     header nav .nav-sections .default-content-wrapper > ul > li > ul {
@@ -249,11 +247,13 @@ header nav .nav-sections ul > li > ul > li {
         > ul
         > li[aria-expanded="true"]
         > ul {
-        display: block;
+        display: flex;
+        justify-content: space-around;
         position: absolute;
-        left: -24px;
-        width: 200px;
-        top: 150%;
+        left: -10px;
+        width: 100vw;
+        top: 93%;
+        flex-wrap: wrap;
         padding: 16px;
         background-color: var(--light-color);
         white-space: initial;
@@ -271,7 +271,7 @@ header nav .nav-tools {
 
 @media (max-width: 600px) {
     header nav {
-      padding-right: .5rem;
+        padding-right: 0.5rem;
         .nav-tools {
             flex: 1.5;
             .default-content-wrapper {
@@ -287,36 +287,34 @@ header nav .nav-tools {
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
-  header nav[aria-expanded="false"] {
-    display: flex;
-    .nav-tools {
-      flex: .4;
-      .default-content-wrapper {
+    header nav[aria-expanded="false"] {
         display: flex;
-        justify-content: space-around;
-      }
+        .nav-tools {
+            flex: 0.4;
+            .default-content-wrapper {
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+        .nav-hamburger {
+            flex: 0;
+        }
     }
-    .nav-hamburger {
-      flex: 0;
-    }
-}
 }
 
 @media (min-width: 900px) {
-  header nav[aria-expanded="true"] {
-    display: flex;
-    width: 100% !important;
-    .nav-tools {
-      flex: 1;
-      .default-content-wrapper {
+    header nav[aria-expanded="true"] {
         display: flex;
-        justify-content: space-evenly;
-      }
+        width: 100% !important;
+        .nav-tools {
+            flex: 1;
+            .default-content-wrapper {
+                display: flex;
+                justify-content: space-evenly;
+            }
+        }
+        .nav-hamburger {
+            flex: 0;
+        }
     }
-    .nav-hamburger {
-      flex: 0;
-    }
-  }
 }
-
-

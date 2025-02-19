@@ -93,6 +93,8 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
     nav.style.transform = "translateX(0)";
     nav.style.transition = "none";
     nav.style.width = '100%';
+    document.body.querySelector('main').style.opacity = '1'
+
   } else {
     nav.style.position = 'absolute';
     nav.style.width = '95%';
@@ -100,6 +102,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
     nav.style.transform = "translateX(50%)";
     nav.style.backgroundColor = "white";
     nav.style.transition = "transform .6s ease-in-out"; 
+    document.body.querySelector('main').style.opacity = '.5'
   }
 
   button.setAttribute(
