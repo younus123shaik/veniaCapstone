@@ -2,15 +2,10 @@ export default async function decorate(block) {
     let url = block.closest('.product-list').querySelector('a');
     const response = await fetch(url.href);
     const cardsData = await response.json();
-    console.log(cardsData) // take 5th index
-    // block.closest('div').innerHTML = `<img src="https://drive.google.com/thumbnail?id=1TeUTb7rBuXn3NUlA4ieyLRJPxYLt5Qvu"/>`;
-
     const Productcarousel = block.closest(".product-list");
     block.closest('.product-list').querySelector('div').replaceWith('');
-
     // Generate HTML for each card from JSON data
     cardsData.data.forEach(card => {
-      
         const slide = document.createElement("div");
         slide.classList.add("slide");
         slide.innerHTML = `
@@ -28,39 +23,46 @@ export default async function decorate(block) {
         `;
         Productcarousel.appendChild(slide);
     });
+    listenEvents(block);
+    $(document).ready(initializeSlick());
+}
 
-    // Initialize Slick Carousel
-    $(document).ready(function(){
-        $(".product-list").slick({
-            slidesToShow: 5,   // Show 3 cards at a time
-            slidesToScroll: 5,
-            autoplaySpeed: 2000,
-            dots: true,
-            // centerMode: true,  // Enable center mode
-            // centerPadding: "50px", // Adjust spacing on the sides
-            responsive: [
-                {
-                    breakpoint: 900,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 4
-                    }
-                },
-                {
-                    breakpoint: 640,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
+function listenEvents(block) {
+    block.querySelectorAll('.card img').forEach((card) => {
+        card.addEventListener('click', () => [
+            window.open('/productpage', '_blank')
+        ])
+    });
+}
+
+function initializeSlick(){
+    $(".product-list").slick({
+        slidesToShow: 5,   // Show 3 cards at a time
+        slidesToScroll: 5,
+        autoplaySpeed: 2000,
+        dots: true,
+        responsive: [
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4
                 }
-            ]
-        });
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            }
+        ]
     });
 }

@@ -17,7 +17,7 @@
   --dark-color: #505050;
   --text-color: #131313;
   --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  /* --link-hover-color: #1d3ecf; */
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -200,8 +200,13 @@ button:focus {
 
 button:disabled,
 button:disabled:hover {
-  background-color: var(--light-color);
-  cursor: unset;
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.notallowed {
+  cursor: not-allowed;
+  opacity: .5;
 }
 
 a.button.secondary,

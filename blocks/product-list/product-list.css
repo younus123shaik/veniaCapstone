@@ -7,12 +7,11 @@
     display: none;
 }
 .product-list {
-    /* .slick-track {
-        min-height: 24.5rem;
-    } */
     .card {
         padding: 0.9rem;
+        cursor: pointer;
         .card-discription {
+            cursor: default;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -29,26 +28,13 @@
                 align-items: center;
                 justify-content: space-evenly;
                 button {
-                    box-sizing: border-box;
-                    display: inline-block;
-                    max-width: 100%;
                     margin: 12px 0;
                     border: 2px solid transparent;
                     border-radius: 2.4em;
                     padding: 0.2rem 2.4rem;
-                    font-family: var(--body-font-family);
-                    font-style: normal;
-                    font-weight: 500;
-                    line-height: 1.25;
-                    text-align: center;
-                    text-decoration: none;
                     background-color: var(--link-color);
                     color: var(--background-color);
-                    text-decoration: underline;
                     cursor: pointer;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
                 }
                 span {
                     font: icon;

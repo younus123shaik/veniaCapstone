@@ -86,23 +86,21 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 
   if (isDesktop.matches) {
     nav.removeAttribute("style");
-  }
-  else if (expanded && !isDesktop.matches) {
-    nav.style.left = '0';
-    nav.style.position = 'relative';
+  } else if (expanded && !isDesktop.matches) {
+    nav.style.left = "0";
+    nav.style.position = "relative";
     nav.style.transform = "translateX(0)";
     nav.style.transition = "none";
-    nav.style.width = '100%';
-    document.body.querySelector('main').style.opacity = '1'
-
+    nav.style.width = "100%";
+    document.body.querySelector("main").style.opacity = "1";
   } else {
-    nav.style.position = 'absolute';
-    nav.style.width = '95%';
+    nav.style.position = "absolute";
+    nav.style.width = "95%";
     nav.style.left = "-50%";
     nav.style.transform = "translateX(50%)";
     nav.style.backgroundColor = "white";
-    nav.style.transition = "transform .6s ease-in-out"; 
-    document.body.querySelector('main').style.opacity = '.5'
+    nav.style.transition = "transform .6s ease-in-out";
+    document.body.querySelector("main").style.opacity = ".5";
   }
 
   button.setAttribute(
@@ -136,7 +134,6 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
   }
 }
 
-
 /**
  * loads and decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -163,8 +160,7 @@ export default async function decorate(block) {
     navBrand.firstElementChild.innerHTML =
       '<img loading="lazy" title="Venia" alt="Venia" class="header-logo-kL0 image-loaded-g2z absolute left-0 top-0 visible" height="18" src="https://venia.magento.com/VeniaLogo-n77.svg" width="102" style="--height: 18px; --width: 102px;">';
   }
-  
-  
+
   const brandLink = navBrand.querySelector(".button");
   if (brandLink) {
     brandLink.className = "";
@@ -178,7 +174,7 @@ export default async function decorate(block) {
       .forEach((navSection) => {
         if (navSection.querySelector("ul"))
           navSection.classList.add("nav-drop");
-        navSection.addEventListener("mouseleave", () => {
+        navSection.addEventListener("click", () => {
           if (isDesktop.matches) {
             const expanded =
               navSection.getAttribute("aria-expanded") === "true";

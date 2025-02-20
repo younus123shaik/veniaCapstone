@@ -6,6 +6,7 @@
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: 24px;
 }
+
 .cards {
   ul {
     margin: 1rem;

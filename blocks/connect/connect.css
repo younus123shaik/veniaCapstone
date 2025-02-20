@@ -9,6 +9,12 @@
             border: 2px solid var(--link-color);
             color: var(--link-color);
             border-radius: 1rem;
+            padding: 0.5rem .5rem;
+
+            &:hover {
+                background-color: transparent;
+
+            }
         }
     }
 }

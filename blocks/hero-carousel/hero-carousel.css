@@ -1,12 +1,8 @@
 .hero-carousel {
-    /* display: flex;
-    gap: 2rem;
-    overflow: scroll; */
     .hero-slider {
         min-height: 660px;
         text-align: center;
         position: relative;
-        /* padding-left: 1rem; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -27,7 +23,13 @@
             font-size: 2.125rem;
             line-height: 1.25;
             font-weight: 400;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        & a {
+            &:hover {
+                background-color: transparent;
+                opacity: .8;
+            }
         }
     }
 }

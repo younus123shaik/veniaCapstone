@@ -21,10 +21,17 @@ footer {
         }
     }
     .connect {
-
         padding: 1rem;
         & div div :first-child {
             font-weight: 700;
+        }
+
+        .subscribe-form {
+            .subscribe-input {
+                padding: 0.4rem 1rem;
+                border: 1px solid var(--dark);
+                border-radius: 4px;
+            }
         }
     }
     .connect div:first-child div:last-child {
@@ -44,8 +51,8 @@ footer {
                 gap: 0.8rem;
             }
 
-            & div:last-child img {
-                width: 5rem;
+            & div p span {
+                min-width: 5rem;
             }
         }
     }

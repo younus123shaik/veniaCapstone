@@ -8,13 +8,6 @@
         justify-content: center;
         align-items: center;
         line-height: 1.25;
-        & h2 {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        & h3 {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
     }
 }
 
@@ -35,8 +28,6 @@
             min-height: 400px;
             padding: 20px 80px;
             width: 33.3333%;
-            /* align-self: stretch; */
-            
             & a {
                 color: var(--background-color);
             }
@@ -44,12 +35,7 @@
     }
 }
 
-@media (min-width: 600px) and (max-width: 900px) {
-    .two-column-layout {
-        & > div {
-        }
-    }
-}
+
 
 @media (min-width: 900px) {
     .two-column-layout {
@@ -57,10 +43,12 @@
             flex-direction: row;
             & h2 {
                 font-size: 3.75rem;
+                font-weight: 400;
             }
             
             & h3 {
                 font-size: 3rem;
+                font-weight: 300;
             }
         }
     }
