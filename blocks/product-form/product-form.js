@@ -8,15 +8,15 @@ const colorMap = {
     "Lily": "ly",
     "Khaki": "kh"
 };
+
 let product;
 export default async function decorate(block) {
     block.parentElement.classList.add('productfulldetails');
     const response = await fetch('/product-list.json');
     const cardsData = await response.json();
     const url = new URL(window.location.href);
-    const id = url.href.slice(-1);
-    product = cardsData.data[id - 1];
-    console.log(product.image.split('_')[0].slice(0, -2));
+    const id = url.pathname.match(/\d+/);
+    product = cardsData.data[parseInt(id[0]) - 1];
     [...block.children].forEach((child, ind) => {
         child.classList.add(formClassNames[ind]);
     });
@@ -49,12 +49,16 @@ function createElement (Element, className) {
 
 function createOptionColor(block) {
     let colorWrapper = block.querySelectorAll('.options div')[0]
-    if (!colorWrapper) return;
+    let colorBtns = Array.from(colorWrapper.querySelectorAll('p'));
+    if(colorBtns.length <= 0) {
+        colorWrapper.classList.add('inactive');
+        return;
+    }
     let div = document.createElement('div');
     div.innerHTML = `<div class="color-wrapper">
           <div>Fashion Color</div>
           <div>
-          ${Array.from(colorWrapper.querySelectorAll('p')).map((p) => {
+          ${colorBtns.map((p) => {
             return `<button type='button' value='${p.innerText}' style='background: var(--${p.innerText.toLowerCase().trim()}-color)'>
             <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-icon-Dp3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
             </button>`
@@ -66,8 +70,7 @@ function createOptionColor(block) {
   }
   
   function createOptionSize (block) {
-    let sizeWrapper = block.querySelectorAll('.options div')[4]
-    console.log(sizeWrapper)
+    let sizeWrapper = Array.from(block.querySelectorAll('.options div')).slice(-1)[0];
     if (!sizeWrapper) return;
     let div = document.createElement('div');
     div.innerHTML = `<div class='size-wrapper'>
@@ -162,7 +165,6 @@ function createOptionColor(block) {
             block.querySelector('.add-to-cart').disabled = false;
         }
     }
-    
 }
 
 function connectSwiper() {

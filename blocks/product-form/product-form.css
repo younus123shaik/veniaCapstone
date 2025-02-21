@@ -75,6 +75,11 @@
                 }
             }
 
+            .inactive {
+                display: none;
+                border: none;
+            }
+
             .size-wrapper {
                 button {
                     border: 1px solid rgba(0, 0, 0, 1);
@@ -235,7 +240,7 @@
     flex: 0.7;
     text-align: right;
     & img {
-        max-width: 15rem; 
+        max-width: 20rem; 
         min-height: 30rem;
         object-fit: cover;
     }
@@ -261,4 +266,16 @@
         }
     }
 
+}
+
+@media (max-width: 600px) {
+    .productfulldetails {
+        .product-form {
+            .image {
+                .thumb-swiper {
+                    display: none;
+                }
+            }
+        }
+    }
 }

@@ -6,6 +6,10 @@
     position: relative;
     display: none;
 }
+.slick-track {
+    display: flex;
+    gap: 2rem;
+}
 .product-list {
     .card {
         padding: 0.9rem;
@@ -22,6 +26,7 @@
                 line-clamp: 1;
                 -webkit-line-clamp: 1;
                 overflow: hidden;
+                font-size: 1rem;
             }
             div {
                 display: flex;
@@ -45,6 +50,12 @@
     }
 }
 
+.product-list-container {
+    h2 {
+        text-align: center;
+    }
+}
+
 @media (min-width: 900px) {
     .product-list {
         .card {
@@ -56,8 +67,9 @@
             }
             .card-discription {
                 line-height: 1;
-                p {
+                p:first-child {
                     margin: 0;
+                    font-weight: 550;
                 }
             }
         }

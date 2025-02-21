@@ -180,7 +180,7 @@ export default async function decorate(block) {
       .forEach((navSection) => {
         if (navSection.querySelector("ul"))
           navSection.classList.add("nav-drop");
-        navSection.addEventListener("click", () => {
+        [ 'mouseover'].map((e) => {navSection.addEventListener(e, (e) => {
           if (isDesktop.matches) {
             const expanded =
               navSection.getAttribute("aria-expanded") === "true";
@@ -191,7 +191,7 @@ export default async function decorate(block) {
             );
           }
         });
-      });
+      });});
   }
 
   // hamburger for mobile

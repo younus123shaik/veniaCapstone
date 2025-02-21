@@ -24,25 +24,28 @@ header nav[aria-expanded="true"] {
         "hamburger brand" var(--nav-height)
         "sections sections" 1fr
         "tools tools" var(--nav-height) / auto 1fr;
-    overflow-y: auto;
-    min-height: 100dvh;
-}
-
-@media (width >= 900px) {
-    header nav {
-        display: flex;
+        overflow-y: auto;
+        min-height: 100dvh;
+    }
+    
+    @media (width >= 900px) {
+        header nav {
+            display: flex;
         justify-content: space-between;
         gap: 0 32px;
         max-width: 1264px;
         padding: 0 32px;
     }
-
+    
     header nav[aria-expanded="true"] {
         min-height: 0;
         overflow: visible;
     }
 }
 
+.icon-venialogo {
+    min-width: 8rem;
+}
 header nav p {
     margin: 0;
     line-height: 1;
@@ -190,12 +193,17 @@ header nav .nav-sections ul > li > ul > li {
 
     header nav[aria-expanded="true"] .nav-sections {
         align-self: unset;
+        height: 100%;
+        .default-content-wrapper {
+            height: 100%;
+        }
     }
 
     header nav .nav-sections .nav-drop {
         padding-right: 16px;
         cursor: pointer;
     }
+
 
     header nav .nav-sections .nav-drop::after {
         content: "";
@@ -218,10 +226,14 @@ header nav .nav-sections ul > li > ul > li {
         display: flex;
         gap: 24px;
         margin: 0;
+        height: 100%;
     }
 
     header nav .nav-sections .default-content-wrapper > ul > li {
+        display: flex;
         flex: 0 1 auto;
+        align-items: center;
+        gap: 5px;
         &:hover {
             text-decoration: underline;
         }
@@ -247,10 +259,23 @@ header nav .nav-sections ul > li > ul > li {
         top: 93%;
         flex-wrap: wrap;
         padding: 16px;
+        padding-bottom: 9px;
         background-color: var(--light-color);
         white-space: initial;
     }
 
+    header nav .nav-sections .default-content-wrapper > ul > li > ul:hover {
+        display: flex;
+        justify-content: space-around;
+        position: absolute;
+        left: -10px;
+        width: 100vw;
+        top: 93%;
+        flex-wrap: wrap;
+        padding: 16px;
+        background-color: var(--light-color);
+        white-space: initial;
+    }
     header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
         padding: 8px 0;
         &:hover {

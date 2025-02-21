@@ -1,3 +1,6 @@
+.hero-carousel-wrapper {
+    min-width: 100%;
+}
 .hero-carousel {
     .hero-slider {
         min-height: 660px;

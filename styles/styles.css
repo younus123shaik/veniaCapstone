@@ -162,9 +162,7 @@ pre {
     white-space: pre;
 }
 
-main {
-  width: 100%;
-}
+
 
 main > div {
     margin: 40px 16px;
@@ -248,13 +246,11 @@ main img {
 
 .icon {
     display: inline-block;
-    /* height: 24px;
-    width: 24px; */
 }
 
 .icon img {
     height: 100%;
-    width: 100%;
+    min-width: 1rem;
 }
 
 /* sections */
