@@ -10,9 +10,9 @@ export default async function decorate(block) {
         slide.classList.add("slide");
         slide.innerHTML = `
             <div class="card">
-                <img src="https://drive.google.com/thumbnail?id=${card.image.split('/')[5]}"/>
+                <img data-url=${card.path} src="${card.image}"/>
                 <div class="card-discription">
-                <p>${card.name}</p>
+                <p>${card.title}</p>
                 <p><span>$</span>${Number(card.price).toFixed(2)}</p>
                 <div>
                 <button class="button-buy"><span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="addToCartButton-icon-ry1 inline stroke-white xs_hidden"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg></span></button>
@@ -28,9 +28,9 @@ export default async function decorate(block) {
 }
 
 function listenEvents(block) {
-    block.querySelectorAll('.card img').forEach((card) => {
-        card.addEventListener('click', () => [
-            window.open('/productpage', '_blank')
+    block.querySelectorAll('.card img').forEach((cardImg) => {
+        cardImg.addEventListener('click', () => [
+            window.open(`${cardImg.dataset.url}`, '_blank')
         ])
     });
 }

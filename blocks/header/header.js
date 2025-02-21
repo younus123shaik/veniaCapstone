@@ -157,9 +157,15 @@ export default async function decorate(block) {
 
   const navBrand = nav.querySelector(".nav-brand");
   if (navBrand) {
-    navBrand.firstElementChild.innerHTML =
-      '<img loading="lazy" title="Venia" alt="Venia" class="header-logo-kL0 image-loaded-g2z absolute left-0 top-0 visible" height="18" src="https://venia.magento.com/VeniaLogo-n77.svg" width="102" style="--height: 18px; --width: 102px;">';
+    // navBrand.firstElementChild.innerHTML =
+    //   '<img loading="lazy" title="Venia" alt="Venia" class="header-logo-kL0 image-loaded-g2z absolute left-0 top-0 visible" height="18" src="https://venia.magento.com/VeniaLogo-n77.svg" width="102" style="--height: 18px; --width: 102px;">';
   }
+  
+  nav.querySelector('.nav-tools .icon-search')?.addEventListener("click", () =>{
+      // redirect to google.com with new window
+      window.open("https://www.google.com", "_blank");
+  })
+
 
   const brandLink = navBrand.querySelector(".button");
   if (brandLink) {

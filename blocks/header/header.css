@@ -277,6 +277,9 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
     grid-area: tools;
+    .icon {
+        cursor: pointer;
+    }
 }
 
 @media (max-width: 600px) {
@@ -297,13 +300,14 @@ header nav .nav-tools {
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
-    header nav[aria-expanded="false"] {
+    header nav {
         display: flex;
         .nav-tools {
             flex: 0.4;
             .default-content-wrapper {
                 display: flex;
-                justify-content: space-around;
+                justify-content: flex-end;
+                gap: 1rem;
             }
         }
         .nav-hamburger {

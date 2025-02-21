@@ -1,5 +1,5 @@
+import { getMetadata } from "../../scripts/aem.js";
 export default function decorate(block) {
-    let span = document.createElement('span');
-    span.textContent = 'Felicia Maxi Dress';
-    block.querySelector('div div p').append(span)
+    let breadcrumbHTML = `<p><a href="/" title="Home">Home</a> / <span>${getMetadata('og:title')}</span></p>`
+    block.innerHTML = breadcrumbHTML;
 }

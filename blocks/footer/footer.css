@@ -29,7 +29,7 @@ footer {
         .subscribe-form {
             .subscribe-input {
                 padding: 0.4rem 1rem;
-                border: 1px solid var(--dark);
+                border: 2px solid var(--dark-color);
                 border-radius: 4px;
             }
         }
@@ -51,8 +51,8 @@ footer {
                 gap: 0.8rem;
             }
 
-            & div p span {
-                min-width: 5rem;
+            & div p span img{
+                max-width: 5rem;
             }
         }
     }

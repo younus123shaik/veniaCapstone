@@ -1,5 +1,5 @@
 .breadcrumb {
-    & div > p {
+    & > p {
         font-size: 0.875rem;
         margin: 1rem;
         line-height: 1.5;
