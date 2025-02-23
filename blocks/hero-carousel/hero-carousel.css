@@ -2,6 +2,7 @@
     min-width: 100%;
 }
 .hero-carousel {
+    margin: 1rem;
     .swiper-pagination {
         & span {
             width: 1rem;
