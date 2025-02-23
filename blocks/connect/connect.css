@@ -10,10 +10,9 @@
             color: var(--link-color);
             border-radius: 1rem;
             padding: 0.5rem .5rem;
-
+            font-weight: 600;
             &:hover {
-                background-color: transparent;
-
+                opacity: 0.5;
             }
         }
     }

@@ -19,7 +19,7 @@ export default async function decorate(block) {
         slide.classList.add("swiper-slide"); // Add Swiper class
         slide.innerHTML = `
             <div class="card">
-                <img data-url="${card.path}" src="${card.image}"/>
+                <img data-url="${card.path}" src="${card.image}" alt=${card.title}/>
                 <div class="card-discription">
                     <p>${card.title}</p>
                     <p><span>$</span>${Number(card.price).toFixed(2)}</p>
