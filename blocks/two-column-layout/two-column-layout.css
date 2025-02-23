@@ -27,7 +27,6 @@
             margin: 0px;
             min-height: 400px;
             padding: 20px 80px;
-            width: 33.3333%;
             & a {
                 color: var(--background-color);
             }

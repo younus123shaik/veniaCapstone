@@ -31,6 +31,20 @@
     position: relative;
     width: 100%;
     min-height: 550px;
+    & h1 {
+      z-index: 1;
+      margin-top: 1rem;
+      font-size: 2.125rem;
+      line-height: 1.25;
+      font-weight: 400;
+  }
+
+  & a {
+      &:hover {
+          background-color: transparent;
+          opacity: .8;
+      }
+  }
   }
   
   .carousel .carousel-slide:has(.carousel-slide-content[data-align='center']) {
@@ -60,9 +74,6 @@
     text-align: center;
     z-index: 1;
     max-width: 70%;
-    & h1 {
-      font-size: 1.6rem;
-    }
   }
   
   .carousel .carousel-slide-indicators {
@@ -79,13 +90,21 @@
     height: 1rem;
     margin: 0;
     padding: 0;
+    border: none;
     border-radius: 50%;
     background-color: #dadada;
     transition: background-color 0.2s;
+    &:disabled {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+
+  .carousel-slide-image picture{
+    margin: 1rem;
   }
   
   .carousel .carousel-slide-indicator button:disabled,
-  .carousel .carousel-slide-indicator button:hover,
   .carousel .carousel-slide-indicator button:focus-visible {
     background-color: var(--text-color);
   }
