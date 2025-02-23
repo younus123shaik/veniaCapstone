@@ -2,6 +2,18 @@
     min-width: 100%;
 }
 .hero-carousel {
+    .slick-dots li button:before {
+        font-size: 13px;
+    }
+    
+    .slick-next {
+        position: relative;
+        display: none;
+    }
+    .slick-track {
+        display: flex;
+        gap: 2rem;
+    }
     .hero-slider {
         min-height: 660px;
         text-align: center;
