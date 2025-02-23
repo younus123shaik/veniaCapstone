@@ -3,7 +3,6 @@ export default function decorate(block) {
 block.classList.add('swiper');
 block.closest('div').firstElementChild.classList.add('hero-slider', 'swiper-slide');
 block.closest('div').lastElementChild.classList.add('hero-slider', 'swiper-slide');
-console.log(block)
 
 const wrapper = document.createElement('div');
 wrapper.classList.add('swiper-wrapper');
