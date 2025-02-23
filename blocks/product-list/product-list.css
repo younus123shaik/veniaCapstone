@@ -25,7 +25,7 @@
                     margin: 12px 0;
                     border: 2px solid transparent;
                     border-radius: 2.4em;
-                    padding: 0.2rem 1.4rem;
+                    padding: 0.2rem .5rem;
                     background-color: var(--link-color);
                     color: var(--background-color);
                     cursor: pointer;
@@ -33,6 +33,7 @@
                 }
                 span {
                     font: icon;
+                    font-size: .8rem;
                 }
             
             }
@@ -73,6 +74,11 @@
                 p:first-child {
                     margin: 0;
                     font-weight: 550;
+                }
+                div {
+                    & span {
+                        font-size: 1rem;
+                    }
                 }
             }
         }

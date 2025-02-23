@@ -62,7 +62,7 @@ function initializeSwiper() {
             clickable: true,
         },
         breakpoints: {
-            950: { slidesPerView: 5, slidesPerGroup: 5 },
+            900: { slidesPerView: 5, slidesPerGroup: 5 },
             800: { slidesPerView: 4, slidesPerGroup: 4 },
             500: { slidesPerView: 3, slidesPerGroup: 3 },
             300: { slidesPerView: 2, slidesPerGroup: 2 },
