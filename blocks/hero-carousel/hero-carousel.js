@@ -1,13 +1,30 @@
 export default function decorate(block) {
-    block.closest('div').firstElementChild.classList.add('hero-slider');
-    block.closest('div').lastElementChild.classList.add('hero-slider');    
-    $(document).ready(function(){
-        $(".hero-carousel").slick({
-            slidesToShow: 1, 
-            slidesToScroll: 1,
-            autoplaySpeed: 2000,
-            dots: true,
-        });
+// Add Swiper classes dynamically
+block.classList.add('swiper');
+block.closest('div').firstElementChild.classList.add('hero-slider', 'swiper-slide');
+block.closest('div').lastElementChild.classList.add('hero-slider', 'swiper-slide');
+console.log(block)
+
+const wrapper = document.createElement('div');
+wrapper.classList.add('swiper-wrapper');
+
+wrapper.append(block.closest('div').firstElementChild)
+wrapper.append(block.closest('div').lastElementChild)
+block.append(wrapper);
+// Add Swiper pagination & navigation elements
+const pagination = document.createElement('div');
+pagination.classList.add('swiper-pagination');
+block.appendChild(pagination);
+
+    new Swiper(".swiper", {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
     });
 }
+
 

@@ -2,17 +2,14 @@
     min-width: 100%;
 }
 .hero-carousel {
-    .slick-dots li button:before {
-        font-size: 13px;
+    .swiper-pagination {
+        & span {
+            width: 1rem;
+            height: 1rem;
+        }
     }
-    
-    .slick-next {
-        position: relative;
-        display: none;
-    }
-    .slick-track {
-        display: flex;
-        gap: 2rem;
+    .swiper-pagination-bullet-active {
+        background-color: var(--text-color);
     }
     .hero-slider {
         min-height: 660px;

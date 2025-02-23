@@ -40,8 +40,6 @@
         }
     }
 
-    
-
     .swiper-pagination {
         bottom: auto;
         & span {
@@ -52,6 +50,8 @@
     .swiper-pagination-bullet-active {
         background-color: var(--text-color);
     }
+    
+
 }
 
 .product-list-container {
