@@ -10,7 +10,9 @@
     display: flex;
     gap: 2rem;
 }
+
 .product-list {
+    overflow: hidden;
     .card {
         padding: 0.9rem;
         cursor: pointer;
@@ -47,6 +49,19 @@
             
             }
         }
+    }
+
+    
+
+    .swiper-pagination {
+        bottom: auto;
+        & span {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+    .swiper-pagination-bullet-active {
+        background-color: var(--text-color);
     }
 }
 
