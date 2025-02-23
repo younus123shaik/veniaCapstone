@@ -1,2 +1,4 @@
 user-agent: *
 allow: /
+
+sitemap: https://main--veniacapstone--younus123shaik.aem.live/sitemap.xml
