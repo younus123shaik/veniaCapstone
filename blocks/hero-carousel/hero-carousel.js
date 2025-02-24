@@ -2,7 +2,7 @@ export default function decorate(block) {
 
   //remove lazyloading
   block.querySelectorAll("picture img").forEach((img) => {
-    img.removeAttribute("loading");
+    img.setAttribute("loading", 'eager');
   });
   // Add Swiper classes dynamically
   block.classList.add("swiper");
