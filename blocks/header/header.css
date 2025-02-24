@@ -24,22 +24,43 @@ header nav[aria-expanded="true"] {
         "hamburger brand" var(--nav-height)
         "sections sections" 1fr
         "tools tools" var(--nav-height) / auto 1fr;
-        overflow-y: auto;
-        min-height: 100dvh;
-    }
-    
-    @media (width >= 900px) {
-        header nav {
-            display: flex;
+    overflow-y: auto;
+    min-height: 100dvh;
+}
+
+@media (width >= 900px) {
+    header nav {
+        display: flex;
         justify-content: space-between;
         gap: 0 32px;
         max-width: 1264px;
         padding: 0 32px;
     }
-    
+
     header nav[aria-expanded="true"] {
         min-height: 0;
         overflow: visible;
+    }
+}
+
+.cart-wrapper {
+    position: relative;
+    .cart-count {
+        position: absolute;
+        visibility: hidden;
+        right: -10px;
+        top: -10px;
+        background: blue;
+        color: white;
+        border-radius: 1rem;
+        padding: 0.1rem 0.3rem;
+        text-align: center;
+        padding-top: 0.2rem;
+        font-size: .8rem;
+    }
+
+    .cart-active {
+        visibility: visible;
     }
 }
 
@@ -204,7 +225,6 @@ header nav .nav-sections ul > li > ul > li {
         cursor: pointer;
     }
 
-
     header nav .nav-sections .nav-drop::after {
         content: "";
         display: inline-block;
@@ -316,6 +336,7 @@ header nav .nav-tools {
                 display: flex;
                 justify-content: flex-end;
                 gap: 1rem;
+                margin: .3rem;
                 & p:nth-child(2) {
                     display: none;
                 }

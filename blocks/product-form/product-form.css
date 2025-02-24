@@ -108,10 +108,12 @@
                         padding: .1rem .2rem;
                         font-size: .5rem;
                         text-decoration: none;
-                        opacity: .7;
+                        background-color: var(--background-color);
+
+                        
                         &:hover {
-                            opacity: 1;
-                            background-color: var(--background-color);
+                            border-color: var(--stroke);
+                            color: var(--stroke);
                         }
                     }
                     & span {

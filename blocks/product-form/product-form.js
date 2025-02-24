@@ -165,6 +165,19 @@ function createOptionColor(block) {
             block.querySelector('.add-to-cart').disabled = false;
         }
     }
+
+    block.querySelector('.add-to-cart').addEventListener('click', () => {
+        // Add product to cart
+        let cart = document.querySelector('.cart-count');
+        const quantity = block.querySelector('.quantity-count');
+        let cartCount = parseInt(cart.innerHTML) +  parseInt(quantity.innerHTML);
+        if (cartCount <= 99) {
+            cart.innerHTML = cartCount;
+        } else {
+            cart.innerHTML = "99+";
+        } 
+        cart.classList.add('cart-active');
+    });
 }
 
 function connectSwiper() {
