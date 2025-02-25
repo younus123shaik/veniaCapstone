@@ -2,7 +2,7 @@ export default async function decorate(block) {
     let url = block.closest('.product-list').querySelector('a');
     const response = await fetch(url.href);
     const cardsData = await response.json();
-    const productCards = cardsData.data.filter(card => card.template === "products");
+    const productCards = cardsData?.data?.filter(card => card.template === "products");
     const productCarousel = block.closest(".product-list");
     
     // Clear existing content and add Swiper classes
@@ -15,7 +15,7 @@ export default async function decorate(block) {
     const swiperWrapper = productCarousel.querySelector(".swiper-wrapper");
     
     // Generate HTML for each card from JSON data
-    productCards.forEach(card => {
+    productCards?.forEach(card => {
         const slide = document.createElement("div");
         slide.classList.add("swiper-slide"); // Add Swiper class
         slide.innerHTML = `

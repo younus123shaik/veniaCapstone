@@ -15,9 +15,9 @@ export default async function decorate(block) {
     const response = await fetch('/product-list.json');
     const cardsData = await response.json();
     const url = new URL(window.location.href);
-    const id = url.pathname.match(/\d+/);
-    product = cardsData.data[parseInt(id[0]) - 1];
-    [...block.children].forEach((child, ind) => {
+    const id = url?.pathname.match(/\d+/);
+    product = cardsData?.data[parseInt(id[0]) - 1];
+    [...block.children]?.forEach((child, ind) => {
         child.classList.add(formClassNames[ind]);
     });
     block.children[0].children[0].classList.add('thumb-swiper','swiper-container');
@@ -58,7 +58,7 @@ function createOptionColor(block) {
     div.innerHTML = `<div class="color-wrapper">
           <div>Fashion Color</div>
           <div>
-          ${colorBtns.map((p) => {
+          ${colorBtns?.map((p) => {
             return `<button type='button' value='${p.innerText}' style='background: var(--${p.innerText.toLowerCase().trim()}-color)'>
             <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-icon-Dp3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
             </button>`
@@ -76,7 +76,7 @@ function createOptionColor(block) {
     div.innerHTML = `<div class='size-wrapper'>
       <div>Fashion Size</div>
       <div>
-      ${Array.from(sizeWrapper.querySelectorAll('p')).map((p) => {
+      ${Array.from(sizeWrapper.querySelectorAll('p'))?.map((p) => {
         return `<button type='button' value='${p.innerText}'>
             <span>${p.innerText}</span>
             </button>`
