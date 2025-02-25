@@ -56,8 +56,8 @@ function listenEvents(block) {
     });
 }
 
-function initializeSwiper() {
-    const Swiper = loadSwiper();
+async function initializeSwiper() {
+    const Swiper = await loadSwiper();
     var swiper = new Swiper(".product-list", {
         slidesPerView: 5,
         slidesPerGroup: 5,

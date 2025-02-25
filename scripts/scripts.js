@@ -31,8 +31,8 @@ function buildBreadCrumb() {
 
 export async function loadSwiper() {
   if (!window.Swiper) {
-    const module = await import('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
-    return module.default;
+    const module = await import('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'); // Use .mjs for ES Modules
+    return module.Swiper ?? module.default; // Ensure correct export is returned
   }
 }
 

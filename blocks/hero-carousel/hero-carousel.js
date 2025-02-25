@@ -1,4 +1,6 @@
-export default function decorate(block) {
+import { loadSwiper } from "../../scripts/scripts.js";
+
+export default async function decorate(block) {
 
   //remove lazyloading
   block.querySelectorAll("picture img").forEach((img) => {
@@ -23,7 +25,7 @@ export default function decorate(block) {
   const pagination = document.createElement("div");
   pagination.classList.add("swiper-pagination");
   block.appendChild(pagination);
-
+  const Swiper = await loadSwiper();
   new Swiper(".swiper", {
     slidesPerView: 1,
     spaceBetween: 0,
