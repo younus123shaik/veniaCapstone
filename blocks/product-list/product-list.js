@@ -1,3 +1,5 @@
+import { loadSwiper } from "../../scripts/scripts.js";
+
 export default async function decorate(block) {
     let url = block.closest('.product-list').querySelector('a');
     const response = await fetch(url.href);
@@ -55,6 +57,7 @@ function listenEvents(block) {
 }
 
 function initializeSwiper() {
+    const Swiper = loadSwiper();
     var swiper = new Swiper(".product-list", {
         slidesPerView: 5,
         slidesPerGroup: 5,
