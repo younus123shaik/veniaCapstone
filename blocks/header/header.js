@@ -158,7 +158,7 @@ export default async function decorate(block) {
   const navBrand = nav.querySelector(".nav-brand");
   let searchDiv = nav.querySelector('.icon-search');
   if (searchDiv) {
-    let searchHtml = `<a href="/search" target="_blank">
+    let searchHtml = `<a href="/search" target="_blank" aria-label="Search">
       ${searchDiv.innerHTML}
     </a>`
     searchDiv.innerHTML = searchHtml;
