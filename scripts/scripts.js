@@ -29,6 +29,13 @@ function buildBreadCrumb() {
   }
 }
 
+async function loadSwiper() {
+  if (!window.Swiper) {
+    const module = await import('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js');
+    return module.default;
+  }
+}
+
 /**
  * load fonts.css and set a session storage flag
  */
