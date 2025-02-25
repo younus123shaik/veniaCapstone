@@ -1,3 +1,5 @@
+import Swiper  from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.mjs';
+
 export default async function decorate(block) {
     let url = block.closest('.product-list').querySelector('a');
     const response = await fetch(url.href);
