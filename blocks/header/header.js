@@ -156,15 +156,16 @@ export default async function decorate(block) {
   });
 
   const navBrand = nav.querySelector(".nav-brand");
+  let searchDiv = nav.querySelector('.icon-search');
+  if (searchDiv) {
+    let searchHtml = `<a href="/search" target="_blank">
+      ${searchDiv.innerHTML}
+    </a>`
+    searchDiv.innerHTML = searchHtml;
+  }
   let cartWrapper = nav.querySelector('.nav-tools .icon-bag').parentElement;
   cartWrapper.classList.add('cart-wrapper');
   cartWrapper.firstElementChild.insertAdjacentHTML('afterend', `<span class="cart-count">0</span>`)
-  nav.querySelector('.nav-tools .icon-search')?.addEventListener("click", () =>{
-      // redirect to google.com with new window
-      window.open("https://www.google.com", "_blank");
-  })
-
-
   const brandLink = navBrand.querySelector(".button");
   if (brandLink) {
     brandLink.className = "";
